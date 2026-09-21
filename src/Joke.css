@@ -55,10 +55,16 @@
 }
 
 .Joke-smiley {
-    font-size: 3rem;
     margin-left: auto;
     border-radius: 50%;
     box-shadow: 0 10px 38px rgba(0, 0, 0, 0.2), 0 10px 12px rgba(0, 0, 0, 0.1);
+}
+
+.Joke-smiley img {
+    display: block;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
 }
 
 .Joke-smiley:hover {

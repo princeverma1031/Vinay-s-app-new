@@ -3,6 +3,7 @@ import Joke from "./Joke";
 import axios from "axios";
 import uuid from "uuid/v4";
 import "./JokeList.css";
+import laughingTears from "./emojis/laughing-tears.svg";
 
 export default class JokeList extends Component {
   static defaultProps = {
@@ -109,7 +110,7 @@ export default class JokeList extends Component {
             <span>Dumb</span> Jokes
           </h1>
           <img
-            src="https://assets.dryicons.com/uploads/icon/svg/8927/0eb14c71-38f2-433a-bfc8-23d9c99b3647.svg"
+            src={laughingTears}
             alt="Smiley Face"
           />
           <button className="JokeList-getmore" onClick={this.handleClick}>

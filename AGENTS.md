@@ -5,13 +5,14 @@
 - **React:** 16.13 with class components; no router, no state library, no TypeScript.
 - **Package manager:** npm (`package-lock.json`, lockfileVersion 1). Install with `npm ci`.
 - **Data:** jokes fetched live from `https://icanhazdadjoke.com` via axios; votes and jokes persisted in `localStorage`. No backend.
-- **Styling:** plain CSS files next to each component (`App.css`, `Joke.css`, `JokeList.css`). Icons from a Font Awesome kit and emoji-css, both loaded by CDN in `public/index.html`.
+- **Styling:** plain CSS files next to each component (`App.css`, `Joke.css`, `JokeList.css`). Arrow/spinner icons from a Font Awesome kit loaded by CDN in `public/index.html`.
+- **Emoji artwork:** local flat-style SVGs in `src/emojis/` (yellow `#ffd764` face, `#4a4a4a` features, `#fa645a` mouth, `#00b4dc` tears). `laughing-tears.svg` is the sidebar mascot; the other six are the per-joke mood faces. Import them as image URLs (`import x from './emojis/x.svg'`) and add new moods in the same style rather than pulling in an emoji library.
 
 ## Structure
 - `src/index.js` — entry; renders `App` into `#root`.
 - `src/App.js` — wraps `JokeList`.
 - `src/JokeList.js` — fetches/dedupes jokes, handles voting, sorts by votes, persists to localStorage.
-- `src/Joke.js` — single joke row with up/down vote and color/emoji by score.
+- `src/Joke.js` — single joke row with up/down vote; `getColor`/`getEmoji` map the vote count to a ring color and a face from `src/emojis/`.
 - `src/App.test.js` — smoke test (`renders without crashing`).
 
 ## Running in the Draftbit sandbox (important)

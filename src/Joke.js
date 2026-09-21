@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
 import './Joke.css';
+import laughingTears from './emojis/laughing-tears.svg';
+import laughing from './emojis/laughing.svg';
+import smiley from './emojis/smiley.svg';
+import slightSmile from './emojis/slight-smile.svg';
+import neutral from './emojis/neutral.svg';
+import confused from './emojis/confused.svg';
+import angry from './emojis/angry.svg';
 
 export default class Joke extends Component {
     getColor() {
@@ -21,22 +28,23 @@ export default class Joke extends Component {
       }
       getEmoji() {
         if (this.props.votes >= 15) {
-          return "em em-rolling_on_the_floor_laughing";
+          return { src: laughingTears, alt: "Laughing with tears" };
         } else if (this.props.votes >= 12) {
-          return "em em-laughing";
+          return { src: laughing, alt: "Laughing" };
         } else if (this.props.votes >= 9) {
-          return "em em-smiley";
+          return { src: smiley, alt: "Big smile" };
         } else if (this.props.votes >= 6) {
-          return "em em-slightly_smiling_face";
+          return { src: slightSmile, alt: "Slight smile" };
         } else if (this.props.votes >= 3) {
-          return "em em-neutral_face";
+          return { src: neutral, alt: "Neutral face" };
         } else if (this.props.votes >= 0) {
-          return "em em-confused";
+          return { src: confused, alt: "Confused face" };
         } else {
-          return "em em-angry";
+          return { src: angry, alt: "Angry face" };
         }
       }
     render() {
+        const emoji = this.getEmoji();
         return (
             <div className="Joke">
                 <div className="Joke-buttons">
@@ -45,7 +53,7 @@ export default class Joke extends Component {
                     <i className="fas fa-arrow-down" onClick={this.props.downVote}></i>
                 </div>
                 <div className="Joke-text">{this.props.text}</div>
-                <div className="Joke-smiley"><i className={this.getEmoji()}></i></div>
+                <div className="Joke-smiley"><img src={emoji.src} alt={emoji.alt} /></div>
             </div>
         )
     }
