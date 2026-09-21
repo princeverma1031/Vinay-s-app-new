@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Running in Draftbit
+
+The Draftbit sandbox starts the dev server automatically on its preview port. Because this is Create React App 3 (webpack 4) running on a modern Node, the server needs `CI=true` and `NODE_OPTIONS=--openssl-legacy-provider`; see `AGENTS.md` for the full startup notes and manual restart command.
+
 ## Available Scripts
 
 In the project directory, you can run:
