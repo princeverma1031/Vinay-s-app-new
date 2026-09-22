@@ -1,6 +1,7 @@
 {
   "name": "dumb-jokes",
-  "version": "0.2.0",
+  "version": "1.0.0",
+  "description": "A dumb jokes app",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
